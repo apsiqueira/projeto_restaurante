@@ -14,10 +14,10 @@
                     <div class="contato small-5 medium-3 small-offset-1 medium-offset-0 columns">
                         <h4 class="footer-section-title">Contato</h4>
                         <p>
-                            Rua Nossa senhora de Copacabana, 400<br>
-                            Rio de Janeiro/RJ<br>
-                            T. 2245-0977<br>
-                            contato@restobar.com.br
+                            Salvador Del Duca , 493<br>
+                            Juiz de Fora/MG<br>
+                            T. 32 98802-6353<br>
+                            apsiqueira23@gmail.com.br
                         </p>
                     </div>
                     

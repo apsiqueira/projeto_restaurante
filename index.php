@@ -14,8 +14,8 @@
     <div class="main-section-title small-10 columns">
         <div class="table">
             <div class="table-cell">
-                <h1>Bem vindo ao Restô Bar</h1>
-                <h2>A cozinha tradicional na Brasa</h2>
+                <h1>Bem vindo ao Pablo Bar</h1>
+                <h2>A cozinha tradicional na Brasa(Portifolio)</h2>
 
             </div>
         </div>
@@ -84,24 +84,24 @@
 
                 <?php
 
-               $result= get_destaque();
+                $result = get_destaque();
 
                 if ($result->num_rows > 0) {
 
                     while ($row = $result->fetch_assoc()) { ?>
-                        
+
                         <div class="cardapio-item-outer bounce-hover small-10 medium-4 columns">
                             <div class="cardapio-item">
-                                <a href="prato.php?prato=<?php echo $row['codigo'] ;?>">
+                                <a href="prato.php?prato=<?php echo $row['codigo']; ?>">
 
                                     <div class="cardapio-item-image">
-                                        <img src="img/cardapio/<?php echo $row['codigo']?>.jpg" alt="salmao" />
+                                        <img src="img/cardapio/<?php echo $row['codigo'] ?>.jpg" alt="salmao" />
                                     </div>
 
                                     <div class="item-info">
 
 
-                                        <div class="title"><?php echo $row['nome']?></div>
+                                        <div class="title"><?php echo $row['nome'] ?></div>
                                     </div>
 
                                     <div class="gradient-filter">
@@ -132,9 +132,9 @@
 
 
 
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 <div id="contact-us" class="contact-us small-11 large-12 columns no-padding small-centered">
@@ -149,13 +149,13 @@
 
         <div class="reservation-form small-12 columns no-padding">
 
-            <form>
+            <form action="index.php" method="POST">
 
                 <div class="form-part1 small-12 large-8 xlarge-7 columns no-padding">
 
-                    <input type="text" name="nome" class="field" placeholder="Nome completo" />
+                    <input type="text" name="nome" class="field" placeholder="Nome completo " required />
 
-                    <input type="text" name="email" class="field" placeholder="E-mail" />
+                    <input type="email" name="email" class="field" placeholder="E-mail" required />
 
                     <textarea type="text" name="mensagem" class="field" placeholder="Mensagem"></textarea>
 
@@ -163,11 +163,11 @@
                 </div>
 
                 <div class="form-part2 small-12 large-3 xlarge-3 end columns no-padding">
-                    <input type="text" name="telefone" class="field" placeholder="Telefone" />
+                    <input type="text" name="telefone" class="field" placeholder="Telefone" required />
 
-                    <input type="datetime-local" name="data" class="field" placeholder="Data e hora" />
+                    <input type="datetime-local" name="data" class="field" placeholder="Data e hora" required />
 
-                    <input type="text" name="data" class="field" placeholder="Número de pessoas" />
+                    <input type="text" name="numPessoas" class="field" placeholder="Número de pessoas" required />
 
                     <input type="submit" name="submit" value="Reservar" />
 
@@ -175,6 +175,22 @@
 
 
             </form>
+
+            <PRE>
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+    
+
+
+
+
+}
+
+?>
+            </PRE>
+
         </div>
 
     </div>

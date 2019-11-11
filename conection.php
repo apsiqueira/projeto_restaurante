@@ -42,8 +42,35 @@ function get_categorias()
 }
 
 
+function get_all_pratos_for_categoria($categoria)
+{
+  global $conection_data_base;
+  $sql_busca_todos = "SELECT * FROM pratos WHERE categoria = '{$categoria}';";
+  $categoria=$conection_data_base->query($sql_busca_todos);
+  return $categoria;
+
+}
+
+function get_pratos_for_codigo($cod_prato)
+{
+  global $conection_data_base;
+  $sql_busca_todos = "SELECT * FROM pratos WHERE codigo = '{$cod_prato}';";
+  $return_pratos=$conection_data_base->query($sql_busca_todos);
+  return $return_pratos;
+
+  }
+
+
+
+
+
+
 
 ?>
+
+
+
+
 
 
 

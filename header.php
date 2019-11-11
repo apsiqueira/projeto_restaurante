@@ -25,7 +25,7 @@
 						<a href="index.php" title="home">
 							<div class="table">
 								<div class="table-cell">
-									<h1>Restrô Bar</h1>
+									<h1>Restrô Bar Pablo</h1>
 								</div>
 							</div>
 						</a>
