@@ -2,4 +2,4 @@
         <li><a href="cardapio.php">Cardápio</a></li>
         <li><a href="index.php#contact-us">Reserva</a></li>
         <li><a href="index.php#footer">Contacto</a></li>
-        <li><a href="index.php#footer">Teste</a></li>
+        <li><a href="sobre.html">Sobre mim</a></li>

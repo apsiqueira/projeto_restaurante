@@ -1,11 +1,13 @@
 <?php
 
 
-$server = "127.0.0.1";
-$user = "root";
-$password = "5122";
-$db_name = "bd_restaurante";
-$port = "3306";
+
+
+// $server = "127.0.0.1";
+// $user = "root";
+// $password = "5122";
+// $db_name = "bd_restaurante";
+// $port = "3306";
 
 
 $conection_data_base = new mysqli($server, $user, $password, $db_name, $port);

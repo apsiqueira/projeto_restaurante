@@ -6,4 +6,8 @@ function hora_minutos_em_segundos($hora,$minutos){
     return $saida;
 }
 
+
+
+
+
 ?>

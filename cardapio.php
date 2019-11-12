@@ -1,5 +1,5 @@
 <?php include "header.php"; ?>
-<<?php include "conection.php" ?> <div class="cardapio-list small-11 large-12 columns no-padding small-centered">
+<?php include "conection.php" ?> <div class="cardapio-list small-11 large-12 columns no-padding small-centered">
 
     <div class="global-page-container">
         <div class="cardapio-title small-12 columns no-padding">

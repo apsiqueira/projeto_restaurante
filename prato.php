@@ -65,8 +65,7 @@
             </div>
 
             <div class="go-back small-12 columns no-padding">
-                <a href="cardapio.php">
-<< Voltar ao Cardápio</a> </div> </div> </div> 
+                <a href="cardapio.php"><< Voltar ao Cardápio</a> </div> </div> </div> 
                     
                     <?php include "footer.php"; ?>
 

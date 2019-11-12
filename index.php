@@ -1,5 +1,16 @@
 <?php include "header.php"; ?>
 <?php include "conection.php"; ?>
+<?php
+
+use PHPMailer\PHPMailer\PHPMailer; ?>
+<?php
+
+use PHPMailer\PHPMailer\Exception; ?>
+<?php include "apoio.php" ?>
+
+
+
+
 
 
 
@@ -149,7 +160,7 @@
 
         <div class="reservation-form small-12 columns no-padding">
 
-            <form action="index.php" method="POST">
+            <form action="index.php#contact-us" method="POST">
 
                 <div class="form-part1 small-12 large-8 xlarge-7 columns no-padding">
 
@@ -180,15 +191,116 @@
 
 <?php
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    // print_r($_POST);
 
-    
+    $nomeCompleto = $_POST["nome"];
+    $email = $_POST["email"];
+    $mensagem = $_POST["mensagem"];
+    $telefone = $_POST["telefone"];
+    $dataReserva = $_POST["data"];
+    $numero_clientes_reserva = $_POST['numPessoas'];
+
+    $nomeCompleto = clean_data($nomeCompleto);
+    $email =  clean_data($email);
+    $mensagem = clean_data($mensagem);
+    $telefone = clean_data($telefone);
+    $dataReserva = clean_data($dataReserva);
+    $numero_clientes_reserva = clean_data($numero_clientes_reserva);
+
+
+    $texto_msg = "E-mail enviado do sistema de reserva do site <br><br> 
+    Nome :{$nomeCompleto} <br>
+    E-mail : {$email} <br>
+    Tel :{$telefone} <br>
+    Data Reserva : {$dataReserva} <br>
+    Numero de Pessoas : {$numero_clientes_reserva} <br>
+    Menssagem : {$mensagem}
+    ";
 
 
 
+    // Inserir Arquivos do PHPMailer
+    require 'phpmailer/Exception.php';
+    require 'phpmailer/PHPMailer.php';
+    require 'phpmailer/SMTP.php';
 
-}
+    // Usar as classes sem o namespace
 
-?>
+
+    // Criação do Objeto da Classe PHPMailer
+    $mail = new PHPMailer(true);
+    $mail->CharSet = "utf-8";
+
+
+    try { ?>
+      
+
+       <?php //Retire o comentário abaixo para soltar detalhes do envio 
+                // $mail->SMTPDebug = 2;                                
+
+                // Usar SMTP para o envio
+                $mail->isSMTP();
+
+                // Detalhes do servidor (No nosso exemplo é o Google)
+                $mail->Host = 'smtp.gmail.com';
+
+                // Permitir autenticação SMTP
+                $mail->SMTPAuth = true;
+
+                // Nome do usuário
+                $mail->Username = 'testesparaprogramacao@gmail.com';
+                // Senha do E-mail         
+                $mail->Password = 'ads@102030';
+                // Tipo de protocolo de segurança
+                $mail->SMTPSecure = 'tls';
+
+                // Porta de conexão com o servidor                        
+                $mail->Port = 587;
+
+
+                // Garantir a autenticação com o Google
+                $mail->SMTPOptions = array(
+                    'ssl' => array(
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                        'allow_self_signed' => true
+                    )
+                );
+
+                // Remetente
+                $mail->setFrom($email, $nomeCompleto);
+
+                // Destinatário
+                $mail->addAddress('testesparaprogramacao@gmail.com', 'Programing Pablo');
+
+                // Conteúdo
+
+                // Define conteúdo como HTML
+                $mail->isHTML(true);
+
+                // Assunto
+                $mail->Subject = 'Novo pedido de reserva';
+                $mail->Body    = $texto_msg;
+                $mail->AltBody = $texto_msg;
+
+                // Enviar E-mail
+                $mail->send();
+
+                echo '<script>alert("Reserva enviada com sucesso!")</script>;';
+                ?>
+         
+
+               <?php  // header('location: index.php');
+            
+            } catch (Exception $e) {
+                echo '<script>alert("Reserva não efetuada!")</script>;';
+                
+                $mail->ErrorInfo;
+            }
+        }
+
+
+        ?>
             </PRE>
 
         </div>

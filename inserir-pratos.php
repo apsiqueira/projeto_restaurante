@@ -163,25 +163,25 @@ $calorias=$prato['calorias'];
 $destaque=$prato['destaque'];
 
 
-//  $sql="INSERT INTO pratos(codigo,nome,categoria,descricao,preco,calorias,destaque) values ('{$codigo}','{$nome}','{$categoria}','{$descricao}','{$preco}','{$calorias}','{$destaque}')";
+ $sql="INSERT INTO pratos(codigo,nome,categoria,descricao,preco,calorias,destaque) values ('{$codigo}','{$nome}','{$categoria}','{$descricao}','{$preco}','{$calorias}','{$destaque}')";
 // // echo "<p>{$preco}</P>"; 
 // // $sql="call insertPratos('{$codigo}','{$nome}','{$categoria}','{$descricao}','{$preco}','{$calorias}','{$destaque}')";
 
 
-        $sql_busca_destaque="SELECT * FROM pratos WHERE destaque=1 ;";
-        $result=$conection_data_base->query($sql_busca_destaque);
+        // $sql_busca_destaque="SELECT * FROM pratos WHERE destaque=1 ;";
+        // $result=$conection_data_base->query($sql_busca_destaque);
 
-        if($result->num_rows>0){
+        // if($result->num_rows>0){
         
             
-            }
-            else{
+        //     }
+        //     else{
             
-            echo "Não ha Destaques";
+        //     echo "Não ha Destaques";
             
-            }
+        //     }
             echo"<br>";
-        }
+        // }
             
  
 
@@ -197,19 +197,19 @@ $destaque=$prato['destaque'];
 // CALL `bd_restaurante`.`insertPratos`(, <{nome varchar(100)}>, <{categoria varchar(100)}>, <{descricao varchar(1000)}>, <{preco float}>, <{calorias int}>, <{destaque boolean}>);
 //  $sql="CALL `bd_restaurante`.`insertPratos`('{$codigo}','{$nome}','{$categoria}','{$descricao}','{$preco}','{$calorias}','{$destaque}');";
 
-// if($conection_data_base->query($sql)){
-// echo "{$nome} inserido com sucesso";
+if($conection_data_base->query($sql)){
+echo "{$nome} inserido com sucesso";
 
-// }
-// else{
-// echo "{$nome} não foi inserido";
-// echo "<br><br>";
+}
+else{
+echo "{$nome} não foi inserido";
+echo "<br><br>";
 
-// echo mysqli_error ($conection_data_base)."<br><br>";
+echo mysqli_error ($conection_data_base)."<br><br>";
 
-// }
-// echo"<br>";
+}
+echo"<br>";
 
 
-// }?>
+}?>
  
